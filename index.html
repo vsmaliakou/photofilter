@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Photofilter</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="logo">Photofilter</h1>
+    </header>
+
+    <main class="main">
+      <section class="controls">
+        <label for="blur">Blur</label>
+        <div class="range">
+          <input
+            type="range"
+            name="blur"
+            min="0"
+            max="10"
+            value="0"
+            data-sizing="px"
+          />
+          <output name="blur">0</output>
+        </div>
+
+        <label for="invert">Invert</label>
+        <div class="range">
+          <input
+            type="range"
+            name="invert"
+            min="0"
+            max="100"
+            value="0"
+            data-sizing="%"
+          />
+          <output name="invert">0</output>
+        </div>
+
+        <label for="sepia">Sepia</label>
+        <div class="range">
+          <input
+            type="range"
+            name="sepia"
+            min="0"
+            max="100"
+            value="0"
+            data-sizing="%"
+          />
+          <output name="sepia">0</output>
+        </div>
+
+        <label for="saturate">Saturate</label>
+        <div class="range">
+          <input
+            type="range"
+            name="saturate"
+            min="0"
+            max="200"
+            value="100"
+            data-sizing="%"
+          />
+          <output name="saturate">100</output>
+        </div>
+
+        <label for="hue-rotate">Hue rotate</label>
+        <div class="range">
+          <input
+            type="range"
+            name="hue-rotate"
+            min="0"
+            max="360"
+            value="0"
+            data-sizing="deg"
+          />
+          <output name="hue-rotate">0</output>
+        </div>
+
+        <label for="contrast">Contrast</label>
+        <div class="range">
+          <input
+            type="range"
+            name="contrast"
+            min="0"
+            max="200"
+            value="100"
+            data-sizing="%"
+          />
+          <output name="contrast">100</output>
+        </div>
+
+        <label for="brightness">Brightness</label>
+        <div class="range">
+          <input
+            type="range"
+            name="brightness"
+            min="0"
+            max="200"
+            value="100"
+            data-sizing="%"
+          />
+          <output name="brightness">100</output>
+        </div>
+
+        <label for="grayscale">Grayscale</label>
+        <div class="range">
+          <input
+            type="range"
+            name="grayscale"
+            min="0"
+            max="200"
+            value="0"
+            data-sizing="%"
+          />
+          <output name="grayscale">0</output>
+        </div>
+
+        <div class="main-btns">
+          <label class="btn">
+            Load picture
+            <input class="btn-load" type="file" name="loadFile" />
+          </label>
+          <button class="btn btn-save">Save picture</button>
+          <button class="btn btn-reset">Reset filters</button>
+        </div>
+      </section>
+
+      <section class="photo-container">
+        <img class="main-photo" src="assets/photo.jpg" alt="img" />
+        <canvas class="canvas"></canvas>
+
+        <div class="presets">
+          <div class="preset">
+            <img
+              class="presetImg"
+              src="assets/photo.jpg"
+              style="
+                filter: contrast(90%) brightness(120%) saturate(85%)
+                  hue-rotate(20deg);
+              "
+              alt="aden"
+            />
+            <p>Aden</p>
+          </div>
+
+          <div class="preset">
+            <img
+              class="presetImg"
+              src="assets/photo.jpg"
+              style="
+                filter: contrast(90%) brightness(110%) saturate(150%)
+                  hue-rotate(-10deg);
+              "
+              alt="amaro"
+            />
+            <p>Amaro</p>
+          </div>
+
+          <div class="preset">
+            <img
+              class="presetImg"
+              src="assets/photo.jpg"
+              style="filter: contrast(140%) sepia(50%)"
+              alt="brannan"
+            />
+            <p>Brannan</p>
+          </div>
+
+          <div class="preset">
+            <img
+              class="presetImg"
+              src="assets/photo.jpg"
+              style="filter: contrast(90%) brightness(110%)"
+              alt="brooklyn"
+            />
+            <p>Brooklyn</p>
+          </div>
+
+          <div class="preset">
+            <img
+              class="presetImg"
+              src="assets/photo.jpg"
+              style="filter: contrast(120%) saturate(125%)"
+              alt="clarendon"
+            />
+            <p>Clarendon</p>
+          </div>
+
+          <div class="preset">
+            <img
+              class="presetImg"
+              src="assets/photo.jpg"
+              style="
+                filter: contrast(110%) brightness(110%) sepia(30%)
+                  grayscale(100%);
+              "
+              alt="inkwell"
+            />
+            <p>Inkwell</p>
+          </div>
+
+          <div class="preset">
+            <img
+              class="presetImg"
+              src="assets/photo.jpg"
+              style="filter: brightness(115%) contrast(75%) saturate(85%)"
+              alt="stinson"
+            />
+            <p>Stinson</p>
+          </div>
+
+          <div class="preset">
+            <img
+              class="presetImg"
+              src="assets/photo.jpg"
+              style="
+                filter: sepia(30%) brightness(110%) saturate(160%)
+                  hue-rotate(350deg);
+              "
+              alt="walden"
+            />
+            <p>Walden</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

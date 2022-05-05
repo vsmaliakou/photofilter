@@ -1,0 +1,143 @@
+:root {
+  --blur: 0px;
+  --invert: 0%;
+  --sepia: 0%;
+  --saturate: 100%;
+  --hue-rotate: 0deg;
+  --contrast: 100%;
+  --brightness: 100%;
+  --grayscale: 0%;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #1e1f22;
+}
+
+.logo {
+  margin: 5px 50px;
+  font-family: "Pacifico", cursive;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls {
+  width: 290px;
+  padding: 20px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  background-color: #2b2c2f;
+}
+
+label {
+  margin: 5px 0;
+}
+
+.range {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 250px;
+  border-radius: 8px;
+  height: 2px;
+  border: 1px solid #bdc3c7;
+  background-color: #fff;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #ecf0f1;
+  border: 1px solid #bdc3c7;
+  width: 12px;
+  height: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.main-btns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.btn {
+  position: relative;
+  margin: 0;
+  padding: 15px 30px;
+  background-color: transparent;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.btn:hover {
+  background-color: #3b3b3b;
+  text-decoration: underline;
+}
+
+.btn-load {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+.photo-container {
+  flex: 1;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.main-photo {
+  height: 530px;
+  filter: blur(var(--blur)) invert(var(--invert)) sepia(var(--sepia))
+    saturate(var(--saturate)) hue-rotate(var(--hue-rotate))
+    contrast(var(--contrast)) brightness(var(--brightness))
+    grayscale(var(--grayscale));
+}
+
+.canvas {
+  display: none;
+}
+
+.presets {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 10px;
+}
+
+.preset:hover {
+  transition: 0.15s;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.preset img {
+  height: 60px;
+}
+
+.preset p {
+  margin: 0;
+  color: #000000;
+}
